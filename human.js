@@ -24,3 +24,5 @@ class Human extends Player{
 
 
 
+
+
