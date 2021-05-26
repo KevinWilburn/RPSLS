@@ -1,19 +1,36 @@
 const { Player }= require("./player");
-const {HumanOne } = require("./human");
-const {HumanTwo} = require("./human");
+const {Human } = require("./human");
 const {AI} = require("./ai");
 const Prompt = ("prompt-sync");
 
 class Game {
     constructor(){
-        this.ai = new AI;
-        this.playerOne= new Player();
-        this.PlayerTwo = new Player();
+        this.ai = new AI("Sheldon");
+        this.playerOne= new Player("Kevin");
+        
         
     }
-
-    runGame(){
+     
+    runGame(){                                                        //"main" method 
         this.rules();
+
+        this.playerOneTurn = new Human();                            //users turn
+        let ai = new AI();                                         // creates new AI and assigns it to ai
+        ai.chooseOption();                                        //AI chooses random gesture from arrayGestures
+
+       switch(this.playerOneTurn){
+           case "Rock":
+           
+           case "Paper":
+
+           case "Scissiors": 
+
+           case "Lizard":
+
+           case "Spock":
+       }
+
+        
 
     }
 
@@ -25,5 +42,5 @@ class Game {
 }
 
 
-
+module.exports.Game = Game;
 
