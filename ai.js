@@ -1,4 +1,8 @@
 const { Player } = require("./player");
+const { Player }= require("./player");
+const {HumanOne } = require("./human");
+const {HumanTwo} = require("./human");
+const Prompt = ("prompt-sync");
 
 class AI extends Player{
     constructor(){
@@ -11,3 +15,4 @@ class AI extends Player{
 
 }
 
+module.exports.AI= AI;
