@@ -16,21 +16,100 @@ class Game {
 
         this.playerOneTurn = new Human();                            //users turn
         let ai = new AI();                                         // creates new AI and assigns it to ai
-        ai.chooseOption();                                        //AI chooses random gesture from arrayGestures
+        let aiRandomGesture = ai.chooseOption();                                        //AI chooses random gesture from arrayGestures
+        console.log(aiRandomGesture , this.playerOneTurn);
 
-       switch(this.playerOneTurn){
-           case "Rock":
-           
-           case "Paper":
-
-           case "Scissiors": 
-
-           case "Lizard":
-
-           case "Spock":
+       if (this.playerOneTurn == "Rock" && aiRandomGesture ==="Paper" || aiRandomGesture === "Spock" ){
+           console.log("Sheldon Wins");
+           this.ai.score++;
+       }
+       else if(this.playerOneTurn === "Rock" & aiRandomGesture !== "Paper" || aiRandomGesture !== "Spock"){
+           console.log("You win!");
+           this.playerOne.score++;
+       }
+       else{
+           console.log("Go again");
+           this.runGame()
+       }
+       
+       
+       
+       
+       
+       
+       
+       if (this.playerOneTurn == "Paper" && aiRandomGesture ==="Scissors" || aiRandomGesture === "Lizard" ){
+           console.log("Sheldon Wins");
+           this.ai.score++;
+       }
+       else if(this.playerOneTurn === "Paper" & aiRandomGesture !== "Scissors" || aiRandomGesture !== "Lizard"){
+           console.log("You win!");
+           this.playerOne.score++;
+       }
+       else{
+           console.log("Go again");
+           this.runGame()
        }
 
+
+
+
+
+
+       if (this.playerOneTurn == "Scissors" && aiRandomGesture ==="Rock" || aiRandomGesture === "Spock" ){
+        console.log("Sheldon Wins");
+        this.ai.score++;
+        }
+       else if(this.playerOneTurn === "Scissors" & aiRandomGesture !== "Rock" || aiRandomGesture !== "Spock"){
+        console.log("You win!");
+        this.playerOne.score++;
+        }
+       else{
+        console.log("Go again");
+        this.runGame()
+        }
+
+
+
+
+
+        if (this.playerOneTurn == "Lizard" && aiRandomGesture ==="Rock" || aiRandomGesture === "Scissors" ){
+            console.log("Sheldon Wins");
+            this.ai.score++;
+        }
+        else if(this.playerOneTurn === "Lizard" & aiRandomGesture !== "Rock" || aiRandomGesture !== "Scissors"){
+            console.log("You win!");
+            this.playerOne.score++;
+        }
+        else{
+            console.log("Go again");
+            this.runGame()
+        }
+
+
+
+
+        if (this.playerOneTurn == "Spock" && aiRandomGesture ==="Paper" || aiRandomGesture === "Lizard" ){
+            console.log("Sheldon Wins");
+            this.ai.score++;
+        }
+        else if(this.playerOneTurn === "Spock" & aiRandomGesture !== "Paper" || aiRandomGesture !== "Lizard"){
+            console.log("You win!");
+            this.playerOne.score++;
+        }
+        else{
+            console.log("Go again");
+            this.runGame()
+        }
+         
+         
+     
         
+        
+
+       
+
+
 
     }
 

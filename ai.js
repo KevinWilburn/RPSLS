@@ -9,8 +9,8 @@ class AI extends Player{
         super();
     }
 
-    chooseOption(arrayGestures){
-       return arrayGestures[Math.floor(Math.random()* arrayGestures)]
+    chooseOption(){
+       return this.arrayGestures[Math.floor(Math.random()* this.arrayGestures.length)]
     }
 
 }
