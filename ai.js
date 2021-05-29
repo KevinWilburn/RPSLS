@@ -10,7 +10,7 @@ class AI extends Player{
     }
 
     chooseOption(){
-       return this.arrayGestures[Math.floor(Math.random()* this.arrayGestures.length)]
+       this.gesture= this.arrayGestures[Math.floor(Math.random()* this.arrayGestures.length)]
     }
 
 }

@@ -5,25 +5,41 @@ const Prompt = ("prompt-sync");
 
 class Game {
     constructor(){
-        this.ai = new AI("Sheldon");
-        this.playerOne= new Player("Kevin");
-        
-        
+        this.playerTwo = new AI("Sheldon");
+        this.playerOne= new Human("Kevin");
+    }
+
+    ChooseNumberOfPlayers(){
+       let numberOfPlayers = prompt("How many humans are plying? One or Two?");
+       switch (numberOfPlayers){
+           case "One":
+               this.playerTwo = new AI("Shedon");
+               this.playerOne = new Human("Kevin");
+               break;
+            case "Two":
+                this.playerTwo = new Human("Player Two");
+                this.playerOne = new Human("Player One");
+
+
+       }
+       
     }
      
-    runGame(){                                                        //"main" method 
+    runGame(){   
+                                                             //"main" method 
         this.rules();
 
-        this.playerOneTurn = new Human();                            //users turn
-        let ai = new AI();                                         // creates new AI and assigns it to ai
-        let aiRandomGesture = ai.chooseOption();                                        //AI chooses random gesture from arrayGestures
+        // this.playerOne = new Human();                            //users turn
+        // let ai = new AI();                                         // creates new AI and assigns it to ai
+        this.ai.chooseOption();    
+        this.playerOne.chooseOption();                                   //AI chooses random gesture from arrayGestures
         console.log(aiRandomGesture , this.playerOneTurn);
 
-       if (this.playerOneTurn == "Rock" && aiRandomGesture ==="Paper" || aiRandomGesture === "Spock" ){
-           console.log("Sheldon Wins");
+       if (this.playerOne.gesture == "Rock" && (this.ai.gesture ==="Paper" || aiRandomGesture === "Spock")){
+           console.log(this.playerTwo + " Wins");
            this.ai.score++;
        }
-       else if(this.playerOneTurn === "Rock" & aiRandomGesture !== "Paper" || aiRandomGesture !== "Spock"){
+       else if(this.playerOneTurn === "Rock" & this.ai.gesture !== "Paper" || aiRandomGesture !== "Spock"){
            console.log("You win!");
            this.playerOne.score++;
        }
